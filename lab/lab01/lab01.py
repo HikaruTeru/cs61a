@@ -8,7 +8,7 @@ def digit(n, k):
     >>> digit(3579, 10)
     0
     """
-    # 本题写法似乎有点问题，以后再优化
+    # 本题写法似乎有点问题，待优化
     i = n // pow(10,k)  
     if i == 0:
         return 0
@@ -55,7 +55,7 @@ def falling(n, k):
         return 1
     else:
         while n > 0 and k > 0:
-            res = n * res   # 不要在循环里弄混“结果”和“计数器”
+            res = n * res   # 注意不要在循环里混淆“结果”和“计数器”
             n = n - 1
             k = k - 1
         return res
@@ -81,8 +81,7 @@ def divisible_by_k(n, k):
     0
     """
     "*** YOUR CODE HERE ***"
-    i = 0
-    total = 0
+    i , total = 0 , 0
     while i < n // k:
         i = i + 1
         total = k * i
@@ -126,12 +125,10 @@ def double_eights(n):
     False
     """
     "*** YOUR CODE HERE ***"
-    while n // 10 > 0:
+    while n > 0:
         if n % 10 == 8:
             if (n // 10) % 10 == 8:
                 return True
-            else:
-                n = n // 10
         n = n // 10
     return False
 
