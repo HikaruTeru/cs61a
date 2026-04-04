@@ -1,0 +1,30 @@
+Q5: Double Trouble
+
+Frames              Objects
+Global frame        func double(x)
+    double
+Global frame        func triple(x)
+    triple
+Global frame        hat
+hat                 func double(x)
+triple              func triple(x)
+double              func triple(x)
+
+
+Q6: Dream Work
+Frames              Objects
+Global frame        func team
+Global frame        func dream
+Global frame        work = 3
+            t  =    func abs
+
+Local frame
+f1
+        work  →     func team(work)
+执行team = dream(team, work + 1) and t
+dream(team, 4)
+    team(2)          → return t(2) - 1  → abs(2) - 1  → return 1
+    if 成立→ t = not 4  → t = False → return True
+
+team = True and abs
+team = abs

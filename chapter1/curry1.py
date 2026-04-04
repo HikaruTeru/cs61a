@@ -18,4 +18,3 @@ def map_to_range(start, end, f):
 map_to_range(0, 10, curried_pow(2))
 
 
-
