@@ -83,8 +83,11 @@ def multiple(a, b):
     42
     """
     "*** YOUR CODE HERE ***"
-
-
+    i = a
+    while i % a != 0 or i % b != 0:
+        i = i + 1
+    return i
+         
 
 def cycle(f1, f2, f3):
     """Returns a function that is itself a higher-order function.
@@ -113,4 +116,17 @@ def cycle(f1, f2, f3):
     19
     """
     "*** YOUR CODE HERE ***"
-
+    def g(n):
+        def h(x):
+            i = 0
+            while i < n:
+                if i % 3 == 0:
+                    x = f1(x)
+                elif i % 3 == 1:
+                    x = f2(x)
+                else:
+                    x = f3(x)
+                i = i + 1
+            return x
+        return h
+    return g
