@@ -89,21 +89,17 @@ test = {
           4
           >>> call_thrice = lambda f: lambda x: f(f(f(x)))
           >>> call_thrice(lambda y: y + 1)(0)
-          0f10194daf41a11a30f4adc80d959f28
-          # locked
+          3
           >>> print_lambda = lambda z: print(z) # When is the return expression of a lambda expression executed?
           >>> print_lambda
-          4f02258d689b15b516174b381ad2aef8
-          # locked
+          Function
           >>> one_thousand = print_lambda(1000)
-          406c98af0b3aa9a2c9dbd76d898bcda3
-          # locked
+          1000
           >>> one_thousand # What did the call to print_lambda return? If it displays nothing, write Nothing
-          358b0ae001277273d8cd480ce5dbfb82
-          # locked
+          Nothing
           """,
           'hidden': False,
-          'locked': True,
+          'locked': False,
           'multiline': False
         }
       ],

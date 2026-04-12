@@ -14,7 +14,9 @@ def composite_identity(f, g):
     False
     """
     "*** YOUR CODE HERE ***"
-
+    def check(x):
+        return f(g(x)) == g(f(x)) 
+    return check
 
 def sum_digits(y):
     """Return the sum of the digits of non-negative integer y."""
@@ -39,6 +41,8 @@ def count_cond(condition):
     1 to n that satisfy the two-argument predicate function Condition, where
     the first argument for condition is n and the second argument is the
     number from 1 to n.
+    返回一个接受参数 N 的函数, 该函数统计从 1 到 N 中满足双参数条件函数 condition 的数的个数。
+    其中 condition 的第一个参数是 N, 第二个参数是 1 到 N 中的某个数
 
     >>> count_fives = count_cond(lambda n, i: sum_digits(n * i) == 5)
     >>> count_fives(10)   # 50 (10 * 5)
@@ -60,7 +64,15 @@ def count_cond(condition):
     8
     """
     "*** YOUR CODE HERE ***"
-
+    def count(n):
+        i = 1
+        total = 0
+        while i <= n:
+            if condition(n, i):   # 把 n 和 i 传给条件函数
+                total += 1
+            i += 1
+        return total
+    return count
 
 def multiple(a, b):
     """Return the smallest number n that is a multiple of both a and b. 

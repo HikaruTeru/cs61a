@@ -12,9 +12,3 @@ result = f(lambda y: a + y)(a)      # λ₁ = lambda y: a + y
 #        上级帧为 global , 调用时 a 取全局帧的值 1
          
          
-higher_order_lambda = lambda f: lambda x: f(x)
-g = lambda x: x * x
-higher_order_lambda(2)(g) # 哪个参数属于哪个函数调用？
-
-higher_order_lambda(g)(2)
-
