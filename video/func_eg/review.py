@@ -1,0 +1,26 @@
+
+from operator import add, mul
+
+def square(x):
+    return x * x
+
+def delay(arg):
+    print('delayed')
+    def g():
+        return arg
+    return g
+
+def pirate(arggg):
+    print('matey')
+    def plunder(arggg):
+        return arggg
+    return plunder
+
+def horse(mask):
+    horse = mask
+    def mask(horse):
+        return horse
+    return horse(mask)
+
+mask = lambda horse: horse(2)
+horse(mask)
